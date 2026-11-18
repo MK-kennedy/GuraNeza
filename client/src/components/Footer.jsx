@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, ArrowRight } from 'l
 import { useState } from 'react';
 import { useToast } from '../context/ToastContext';
 import Logo from './Logo';
+import { developers } from '../data/developers';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -75,7 +76,17 @@ const Footer = () => {
       </div>
 
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} GuraNeza. All rights reserved.</span>
+        <span>
+          © {new Date().getFullYear()} GuraNeza. All rights reserved. Built by{' '}
+          {developers.map((developer, index) => (
+            <span key={developer.name}>
+              {index > 0 && ' & '}
+              <a className="footer-credit" href={developer.github} target="_blank" rel="noreferrer">
+                {developer.name}
+              </a>
+            </span>
+          ))}
+        </span>
         <span>Made with care in Kigali, Rwanda 🇷🇼</span>
       </div>
     </footer>

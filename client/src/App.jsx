@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import AdminRoute from './components/AdminRoute';
+import WelcomeModal from './components/WelcomeModal';
 
 import Home from './pages/Home';
 import Shop from './pages/Shop';
@@ -34,6 +35,7 @@ const StoreLayout = ({ children }) => (
 const App = () => (
   <>
     <ScrollToTop />
+    <WelcomeModal />
     <Routes>
       {/* Public storefront */}
       <Route path="/" element={<StoreLayout><Home /></StoreLayout>} />
